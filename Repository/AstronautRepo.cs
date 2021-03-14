@@ -7,11 +7,14 @@ namespace SpaceProject.Repository
 {
     class AstronautRepo
     {
-        public void createCrewMember() 
+        private Astronaut[] astronauts;
+        
+
+        public Astronaut[] createCrewMember()
         {
-            Astronaut[] astronauts = new Astronaut[3];
+            astronauts = new Astronaut[3];
             Astronaut a1 = new Astronaut();
-            
+
 
             a1.AstroID = 1;
             a1.AstroName = "Jack";
@@ -23,7 +26,7 @@ namespace SpaceProject.Repository
             a2.AstroName = "Rose";
             Role missionSpecialist = Role.MissionSpecialist;
             a2.Role = missionSpecialist;
-            
+
 
             Astronaut a3 = new Astronaut();
             a3.AstroID = 3;
@@ -37,13 +40,30 @@ namespace SpaceProject.Repository
 
             int length = astronauts.Length;
             Console.WriteLine("AstroID \t AstroName \t Role");
-            for(int i = 0; i<length; i++)
+            for (int i = 0; i < length; i++)
             {
                 Console.WriteLine(astronauts[i].AstroID + "\t" + "\t"
                     + astronauts[i].AstroName + "\t" + "\t"
                     + astronauts[i].Role);
             }
+         
 
+            return astronauts;
+
+        }
+        public String GetCaptainName()
+        {
+            Console.WriteLine(astronauts[0].AstroName);
+            if (astronauts[0].AstroName == null)
+            {
+                Console.WriteLine("No captain.");
+                return null;
+            }
+            else
+            {
+                Console.WriteLine(astronauts[0].AstroName);
+                return astronauts[0].AstroName;
+            }
         }
     }
 }

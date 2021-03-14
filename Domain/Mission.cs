@@ -20,10 +20,26 @@ namespace SpaceProject.Domain
         private string peronInCharge;
         private decimal budget;
         private readonly DateTime createDate;
-        private DateTime expirationDate;
-        private  MissionType type;
+        private DateTime expireDate;
+        private MissionType type;
+
+        //constructor
+        public Mission() { }
+
+        public Mission(int missionID, string missionName, string description, string peronInCharge, decimal budget, DateTime createDate, DateTime expireDate, MissionType type)
+        {
+            this.missionID = missionID;
+            this.missionName = missionName;
+            this.description = description;
+            this.peronInCharge = peronInCharge;
+            this.budget = budget;
+            this.createDate = createDate;
+            this.expireDate = expireDate;
+            this.type = type;
+        }
 
 
+        // properties
         public int MissionId
         {
             get
@@ -87,22 +103,32 @@ namespace SpaceProject.Domain
         public DateTime CreateDate {
             get
             {
-                return DateTime.Now;
+                return createDate;
             }
         }
 
-        public DateTime ExpirationDate
+        public DateTime ExpireDate
         {
             get
             {
-                return expirationDate;
+                return expireDate;
             }
             set
             {
-                expirationDate = value;
+                expireDate = value;
             }
         }
 
-        public MissionType Type { get; set; }
+        public MissionType Type { 
+
+            get
+            {
+                return type;
+            }
+            set
+            {
+                type = value;
+            }
+        }
     }
 }

@@ -15,8 +15,8 @@ namespace SpaceProject.Domain
         private int astroID;
         private string astroName;
         private Role role;
-        
-        // auto-implemented properties, getters and setters
+
+        // properties, include getters and setters
         public int AstroID
         {
 
@@ -52,6 +52,13 @@ namespace SpaceProject.Domain
             {
                 role = value;
             }
+        }
+
+        public static void receiveMissionFromMCC(){
+        }
+
+        public static void divideMissionIntoTasks()
+        {
         }
     }
 }

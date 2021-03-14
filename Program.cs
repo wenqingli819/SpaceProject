@@ -1,5 +1,6 @@
 ﻿using SpaceProject.Repository;
 using System;
+using SpaceProject.Domain;
 
 namespace SpaceProject
 {
@@ -10,6 +11,8 @@ namespace SpaceProject
             AstronautRepo a = new AstronautRepo();
             a.createCrewMember();
             Console.WriteLine("Crew Members are ready.");
+
+            MCC.AssignMissionToAstronauts();
         }
     }
 }
