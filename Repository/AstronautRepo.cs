@@ -7,10 +7,10 @@ namespace SpaceProject.Repository
 {
     class AstronautRepo
     {
-        private Astronaut[] astronauts;
+        Astronaut[] astronauts;
         
 
-        public Astronaut[] createCrewMember()
+        public Astronaut[] CreateCrewMember()
         {
             astronauts = new Astronaut[3];
             Astronaut a1 = new Astronaut();
@@ -46,24 +46,13 @@ namespace SpaceProject.Repository
                     + astronauts[i].AstroName + "\t" + "\t"
                     + astronauts[i].Role);
             }
-         
-
+        
             return astronauts;
 
         }
         public String GetCaptainName()
         {
-            Console.WriteLine(astronauts[0].AstroName);
-            if (astronauts[0].AstroName == null)
-            {
-                Console.WriteLine("No captain.");
-                return null;
-            }
-            else
-            {
-                Console.WriteLine(astronauts[0].AstroName);
                 return astronauts[0].AstroName;
-            }
         }
     }
 }

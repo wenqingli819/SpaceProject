@@ -129,6 +129,7 @@ namespace SpaceProject.Domain
             {
                 type = value;
             }
-        }
-    }
+        }    }
+
+
 }

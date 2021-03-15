@@ -9,10 +9,13 @@ namespace SpaceProject
         static void Main(string[] args)
         {
             AstronautRepo a = new AstronautRepo();
-            a.createCrewMember();
+            Astronaut[] astronauts=a.CreateCrewMember();
+            String captain = a.GetCaptainName();
+            
             Console.WriteLine("Crew Members are ready.");
+            Console.WriteLine("Captain is " + captain);
 
-            MCC.AssignMissionToAstronauts();
+            MCC.AssignMissionToAstronauts(captain);
         }
     }
 }
