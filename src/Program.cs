@@ -1,7 +1,7 @@
-﻿using SpaceProject.Repository;
-using System;
-using SpaceProject.Domain;
-using SpaceProject.Singleton;
+﻿using System;
+using SpaceProject.Data.Model;
+using SpaceProject.Data.Repository;
+using SpaceProject.UI.Controller;
 
 namespace SpaceProject
 {
@@ -9,16 +9,25 @@ namespace SpaceProject
     {
         static void Main(string[] args)
         {
+            // create crew members
             AstronautRepo a = new AstronautRepo();
             Astronaut[] astronauts=a.CreateCrewMember();
             String captain = a.GetCaptainName();
             
-            Console.WriteLine("Crew Members are ready.");
+            Console.WriteLine("Crew Members are ready");
             Console.WriteLine("Captain is " + captain);
+            Console.WriteLine("\n");
+            
+            // create rockets
+            RocketRepo.CreateRockets();
+            Console.WriteLine("Rockets created");
+            Console.WriteLine("\n");
 
-            MCC mcc = MCC.GetInstance();
-            mcc.AssignMissionToAstronauts(captain);
-
+            // create mission and assign to captain
+            MccController mcc = new MccController();
+            mcc.CreateMission(captain);
+            Console.WriteLine("Mission Created");
+            Console.WriteLine("\n");
 
             //test singleton
             MCC mcc1 = MCC.GetInstance();

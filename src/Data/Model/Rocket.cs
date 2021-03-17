@@ -1,14 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SpaceProject.Domain
+﻿namespace SpaceProject.Data.Model
 {
     class Rocket
     {
         private int rocketID;
         private string rocketName;
+        private MissionType missionType;
 
+        public Rocket(int rocketId, string rocketName, MissionType missionType)
+        {
+            rocketID = rocketId;
+            this.rocketName = rocketName;
+            this.missionType = missionType;
+        }
 
         public int RocketID
         {
@@ -35,7 +38,11 @@ namespace SpaceProject.Domain
                 rocketName = value;
             }
         }
-
+        public MissionType MissionType
+        {
+            get => missionType;
+            set => missionType = value;
+        }
 
 
     }

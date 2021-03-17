@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SpaceProject.Domain
+﻿namespace SpaceProject.Data.Model
 {
     class RocketParts
     {

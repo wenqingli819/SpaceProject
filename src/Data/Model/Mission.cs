@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SpaceProject.Domain;
 
-namespace SpaceProject.Domain
+namespace SpaceProject.Data.Model
 {
-    public enum MissionType
-    {
-        Research,
-        AsteroidMining,
-        Satellites,
-        Tourism
-    }
     class Mission
     {
         private int missionID;
@@ -26,16 +16,16 @@ namespace SpaceProject.Domain
         //constructor
         public Mission() { }
 
-        public Mission(int missionID, string missionName, string description, string peronInCharge, decimal budget, DateTime createDate, DateTime expireDate, MissionType type)
+        public Mission(int missionID, string missionName, string description, string peronInCharge, decimal budget, DateTime expireDate, MissionType type)
         {
             this.missionID = missionID;
             this.missionName = missionName;
             this.description = description;
             this.peronInCharge = peronInCharge;
             this.budget = budget;
-            this.createDate = createDate;
             this.expireDate = expireDate;
             this.type = type;
+            this.createDate = DateTime.Now;
         }
 
 
@@ -119,8 +109,8 @@ namespace SpaceProject.Domain
             }
         }
 
-        public MissionType Type { 
-
+        public MissionType Type
+        {
             get
             {
                 return type;
@@ -129,7 +119,8 @@ namespace SpaceProject.Domain
             {
                 type = value;
             }
-        }    }
+        }
+    }    
 
 
 }

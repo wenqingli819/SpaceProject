@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SpaceProject.Domain;
+using SpaceProject.Data.Model;
 
-namespace SpaceProject.Repository
+namespace SpaceProject.Data.Repository
 {
     class AstronautRepo
     {
